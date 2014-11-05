@@ -8,7 +8,7 @@ HEX_IMAGE = $(PROJECT).hex
 STDP ?= ../STM32F429I-Discovery_FW_V1.0.1
 
 # Toolchain configurations
-CROSS_COMPILE ?= arm-none-eabi-
+CROSS_COMPILE ?= /home/nicholas/workspace/toolchain/gcc-arm-none-eabi-4_8-2014q2/bin/arm-none-eabi-
 CC = $(CROSS_COMPILE)gcc
 LD = $(CROSS_COMPILE)ld
 OBJCOPY = $(CROSS_COMPILE)objcopy
@@ -57,7 +57,7 @@ CFLAGS += -D"assert_param(expr)=((void)0)"
 OBJS += \
       $(PWD)/CORTEX_M4F_STM32F4/main.o \
       $(PWD)/CORTEX_M4F_STM32F4/startup/system_stm32f4xx.o \
-      #$(PWD)/CORTEX_M4F_STM32F4/stm32f4xx_it.o \
+      $(PWD)/CORTEX_M4F_STM32F4/stm32f4xx_it.o \
 
 OBJS += \
       $(PWD)/croutine.o \
@@ -86,7 +86,8 @@ OBJS += \
     $(PWD)/Utilities/STM32F429I-Discovery/stm32f429i_discovery.o \
     $(PWD)/Utilities/STM32F429I-Discovery/stm32f429i_discovery_sdram.o \
     $(PWD)/Utilities/STM32F429I-Discovery/stm32f429i_discovery_lcd.o \
-    $(PWD)/Utilities/STM32F429I-Discovery/stm32f429i_discovery_ioe.o
+    $(PWD)/Utilities/STM32F429I-Discovery/stm32f429i_discovery_ioe.o \
+    $(PWD)/Utilities/STM32F429I-Discovery/stm32f429i_discovery_l3gd20.o 
 
 # Traffic
 OBJS += $(PWD)/CORTEX_M4F_STM32F4/traffic/draw_graph.o

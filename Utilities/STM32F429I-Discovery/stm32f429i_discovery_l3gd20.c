@@ -470,9 +470,10 @@ static uint8_t L3GD20_SendByte(uint8_t byte)
 uint32_t L3GD20_TIMEOUT_UserCallback(void)
 {
   /* Block communication and all processes */
-  while (1)
+  /*while (1)
   {   
-  }
+  }*/
+  //return 0;
 }
 #endif /* USE_DEFAULT_TIMEOUT_CALLBACK */
 

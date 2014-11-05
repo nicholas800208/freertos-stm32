@@ -502,9 +502,10 @@ void xPortPendSVHandler( void )
 	);
 }
 /*-----------------------------------------------------------*/
-
+extern void OnSysTick(void);
 void xPortSysTickHandler( void )
 {
+	OnSysTick();
 	/* The SysTick runs at the lowest interrupt priority, so when this interrupt
 	executes all interrupts must be unmasked.  There is therefore no need to
 	save and then restore the interrupt mask value as its value is already
